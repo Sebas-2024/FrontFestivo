@@ -1,1 +1,26 @@
 <p>verificar-festivos works!</p>
+<div class="container">
+    <h1>Verificar Festivo</h1>
+    <form (ngSubmit)="verificar()">
+      <mat-form-field appearance="fill">
+        <mat-label>Año</mat-label>
+        <input matInput type="number" [(ngModel)]="anio" name="anio" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Mes</mat-label>
+        <input matInput type="number" [(ngModel)]="mes" name="mes" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Día</mat-label>
+        <input matInput type="number" [(ngModel)]="dia" name="dia" required />
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">Verificar</button>
+    </form>
+  
+    <div *ngIf="resultado">
+      <h3>Resultado: {{ resultado }}</h3>
+    </div>
+  </div>
