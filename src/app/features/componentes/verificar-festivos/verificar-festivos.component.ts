@@ -1,24 +1,30 @@
 import { Component } from '@angular/core';
 
-import { FestivoService } from 'src/app/services/festivo.service';
 
+import { FestivoService } from '../../../services/festivo.service';
 @Component({
   selector: 'app-verificar-festivo',
-  templateUrl: './verificar-festivo.component.html',
-  styleUrls: ['./verificar-festivo.component.scss'],
+  templateUrl: './verificar-festivos.component.html',
+  styleUrls: ['./verificar-festivos.component.scss']
 })
 export class VerificarFestivoComponent {
-  anio!: number;
-  mes!: number;
-  dia!: number;
-  resultado!: string;
+  ano: number = 2023;  // Año por defecto
+  mes: number = 1;     // Mes por defecto
+  dia: number = 1;     // Día por defecto
+  respuesta: string = '';
 
   constructor(private festivoService: FestivoService) {}
 
-  verificar(): void {
-    this.festivoService.verificarFestivo(this.anio, this.mes, this.dia).subscribe(
-      (response) => (this.resultado = response),
-      (error) => (this.resultado = 'Error al verificar la fecha.')
+  verificarFecha() {
+    this.festivoService.verificarFestivo(this.ano, this.mes, this.dia).subscribe(
+      (respuesta: string) => {
+        this.respuesta = respuesta;
+      },
+      (error) => {
+        this.respuesta = 'Error al verificar la fecha';
+        console.error(error);
+      }
     );
   }
 }
+

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VerificarFestivosComponent } from './verificar-festivos.component';
+import { VerificarFestivoComponent } from './verificar-festivos.component';
 
 describe('VerificarFestivosComponent', () => {
-  let component: VerificarFestivosComponent;
-  let fixture: ComponentFixture<VerificarFestivosComponent>;
+  let component: VerificarFestivoComponent;
+  let fixture: ComponentFixture<VerificarFestivoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VerificarFestivosComponent]
+      imports: [VerificarFestivoComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VerificarFestivosComponent);
+    fixture = TestBed.createComponent(VerificarFestivoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
